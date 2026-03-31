@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body { font-family: Arial; padding: 20px; transition: background 0.5s; }
+        .hidden { display: none; }
+        .error { color: red; }
+        .weather-app { max-width: 500px; margin: 0 auto; }
+        form { margin-bottom: 20px; }
+        input { padding: 8px; width: 70%; margin-right: 10px; }
+        button { padding: 8px 12px; }
+        .weather-main { text-align: center; }
+        .weather-main img { width: 100px; height: 100px; }
+        .weather-details { display: flex; justify-content: space-between; margin-top: 20px; }
+        .detail span { display: block; }
+        #recent-searches ul { list-style: none; padding-left: 0; }
+        #recent-searches li button { padding: 5px 10px; margin: 5px 0; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="weather-app">
+        <h1>Weather Dashboard</h1>
+
+        <form id="search-form">
+            <input type="text" id="city-input" placeholder="Enter city name..." required>
+            <button type="submit">Search</button>
+        </form>
+
+        <div id="loading" class="hidden">Loading...</div>
+        <div id="error" class="hidden error"></div>
+
+        <div id="weather-display" class="hidden">
+            <div class="weather-main">
+                <h2 id="city-name"></h2>
+                <img id="weather-icon" src="" alt="Weather icon">
+                <p id="temperature"></p>
+                <p id="description"></p>
+            </div>
+
+            <div class="weather-details">
+                <div class="detail">
+                    <span>Feels Like</span>
+                    <span id="feels-like"></span>
+                </div>
+                <div class="detail">
+                    <span>Humidity</span>
+                    <span id="humidity"></span>
+                </div>
+                <div class="detail">
+                    <span>Wind</span>
+                    <span id="wind"></span>
+                </div>
+                <div class="detail">
+                    <span>Pressure</span>
+                    <span id="pressure"></span>
+                </div>
+            </div>
+        </div>
+
+        <div id="recent-searches">
+            <h3>Recent Searches</h3>
+            <ul id="search-history"></ul>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
